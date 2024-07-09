@@ -56,6 +56,7 @@ public class Exercise1 {
                 .forEach(userName -> System.out.print(userName+" , "));
 
         System.out.println();
+        //above was used just for flatmap which converts normal
         StreamSources.userStream()
                 .filter(user -> StreamSources.intNumbersStream().anyMatch(i -> i==user.getId()))
                 .forEach(user -> System.out.print(user.getFirstName()+" , "));
