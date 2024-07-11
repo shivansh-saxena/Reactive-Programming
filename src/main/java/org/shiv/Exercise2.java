@@ -1,5 +1,7 @@
 package org.shiv;
 
+import reactor.core.publisher.Flux;
+
 import java.io.IOException;
 
 public class Exercise2 {
@@ -11,8 +13,9 @@ public class Exercise2 {
         // Print all numbers in the ReactiveSources.intNumbersFlux stream
         // TODO: Write code here
         System.out.println("Print all numbers in the ReactiveSources.intNumbersFlux stream");
-        ReactiveSources.intNumbersFlux()
-                .subscribe(element -> System.out.print(element+" , "));
+        Flux<Integer> source = ReactiveSources.intNumbersFlux();
+        source.subscribe(element -> System.out.print(element+" , "));
+        source.subscribe(element -> System.out.print(element+" ,reprint "));
 
         // Print all users in the ReactiveSources.userFlux stream
         // TODO: Write code here
