@@ -1,5 +1,7 @@
 package org.shiv;
 
+import reactor.core.Disposable;
+
 import java.io.IOException;
 import java.util.Optional;
 
@@ -35,6 +37,16 @@ public class Exercise4 {
                         () -> System.out.println("Complete")//this executes at the end of first lambda
                 );
 
+//        Type four(deprecated)
+//        Disposable disposable = ReactiveSources.intNumberMono()
+//                .subscribe(
+//                        number -> System.out.println(number),
+//                        error -> System.out.println(error.getMessage()),
+//                        () -> System.out.println("Complete"),//this executes at the end of first lambda
+//                        subscription -> {
+//
+//                        }
+//                );
 
         // Get the value from the Mono into an integer variable
         // TODO: Write code here
