@@ -16,6 +16,26 @@ public class Exercise4 {
         ReactiveSources.intNumberMono()
                 .subscribe(number -> System.out.println(number));
 
+        //Type one
+        ReactiveSources.intNumberMono()
+                .subscribe();
+
+        //Type two
+        ReactiveSources.intNumberMono()
+                .subscribe(
+                        number -> System.out.println(number),
+                        error -> System.out.println(error.getMessage())
+                );
+
+        //Type three
+        ReactiveSources.intNumberMono()
+                .subscribe(
+                        number -> System.out.println(number),
+                        error -> System.out.println(error.getMessage()),
+                        () -> System.out.println("Complete")//this executes at the end of first lambda
+                );
+
+
         // Get the value from the Mono into an integer variable
         // TODO: Write code here
         System.out.println("Get the value from the Mono into an integer variable");
